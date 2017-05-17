@@ -1,0 +1,102 @@
+<!-- 
+	Universidad del Valle de Guatemala
+	Claudia Sophia Méndez Belloso
+	Carné 12732
+	2017
+	index.html 
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+		<title>Simulador de inundación por tsunami </title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="static/styles/bootstrap/css/bootstrap.min.css"> 
+		<link rel="stylesheet" href="static/styles/index.css">	
+	</head>
+
+	<body onload="initialize()">
+		<header>
+			<div class="container header-container">
+				<h1>Simulador de inundación por tsunami</h1>
+			</div>
+		</header>
+
+		<div class="container main-container">
+			<section class="row first-container">
+				<div class="col col-sm-12 col-md-4 col-lg-3 right-container">
+					<div class="row" >
+						<h4>Epicentro (lat,long): </h4>
+						<div class="col col-xs-8">
+				    		<input type="text" class="form-control epicentro" placeholder="lat,long" id="searchInput">
+				    		<button class="btn btn-success epicenter-btn" value="setEpicenter" onclick="geocodeLatLng()">Establecer epicentro</button>
+				    		<button class="btn btn-danger epicenter-btn" value="clearEpicenter" onclick="deleteMarkers()">Borrar epicentro</button>
+				    	</div>
+					</div>
+
+					<div class="row">
+						<h4 class="title-intensity">Intensidad del tsunami (Escala de Imamura):</h4>
+						<div class="col col-xs-6 col-md-10">					
+							<select id="scale" onchange="setSizeParamsFromDropDown(this.selectedIndex)" class="form-control">
+								<option value="-1" selected="selected">Seleccione una opción</option>
+								<option value="1">0</option>
+								<option value="2">1</option>
+								<option value="3">2</option>
+								<option value="4">3</option>
+								<option value="5">4</option>
+							</select>
+						</div>
+						<div class="col col-xs-8 col-md-12">
+							<h4>Altura promedio de ola (m):</h4>
+							<p class="wave-height-p" id="wave-height-p"></p>
+							<input class="form-control wave-height" type="number" id="WaveHeight" />
+							<input class="form-control range" type="number" id="Range" />
+						</div>
+							
+						<div class="col col-xs-12 btn-container">
+							<button class="btn btn-warning area-btn" id="drawArea" value="Dibujar Área" onclick="drawArea()">Dibujar Área</button>
+							<button class="btn btn-danger area-btn" id="resetArea" value="Borrar Área" onclick="measureReset()">Borrar Área</button>
+							<button class="btn btn-primary restart-btn" id="reDraw" value="Reiniciar" onclick="clearMap()">Reiniciar</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col col-sm-12 col-md-8 col-lg-9 left-container">
+					<h4>Indique en el mapa el punto de inicio (epicentro), luego la dirección de propagación del tsunami</h4>
+						<div align="center" id="outputDiv"></div>
+					<div class="map-container" id="map-canvas">
+						<!--aqui va el mapa-->
+					</div>
+				</div>
+			</section>
+
+			<section class="row second-container">
+				<div class="col col-md-12">
+					<h2>Resultados</h2>
+					<div class="row">
+						<div class="col col-md-8">
+							<h4>Área inundada (km2):</h4>
+							<p class="area" id="span-area"></p>
+							<br>
+							<h4>Longitud total (m):</h4>
+							<p class="longitud" id="span-length"></p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<footer>
+			<p><strong>Sophia Méndez</strong></p>
+		<p>UVG | 2017</p>
+		</footer>
+
+		<script src="static/scripts/bootstrap/js/jquery.js"></script>
+		<script src="static/scripts/bootstrap/js/bootstrap.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDgPyBMoGLEofHI4h8a42rUnf3T6a-BkbQ&libraries=places,drawing,geometry"></script>
+		<script src="static/scripts/index.js"></script>
+	</body>
+</html>

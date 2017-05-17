@@ -1,0 +1,131 @@
+/*
+Universidad del Valle de Guatemala
+Claudia Sophia Méndez Belloso
+Carné 12732
+2017
+index.js
+*/
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Montserrat', sans-serif;
+}
+
+p, input, option{
+	font-family: 'Open Sans', sans-serif;
+}
+h4, h5, h6{
+	margin-top: 20px;
+}
+
+.container{
+	width: 100%;
+}
+
+body header .header-container{
+	background-color: #000;
+	color: white;
+  position: fixed;
+  display: block;
+  height: 130px;
+  z-index: 200;
+}
+
+body header .header-container h1{
+	vertical-align: middle;
+	margin-left: 40px;
+}
+
+body .main-container{
+	padding-top: 130px;
+}
+
+body .container .first-container{
+	background-color: #white;
+}
+
+body .container .first-container .left-container{
+	float: right;
+}
+
+body .container .first-container .left-container .map-container{
+	background-color: #74a0ed;
+	width: 90%;
+	margin: 20px auto;
+	height: 500px;
+}
+
+body .container .first-container .right-container{
+	float: right;
+}
+
+body .container .first-container .right-container .row .col .area-btn{
+	visibility: hidden;
+}
+
+body .container .first-container .right-container .row .col .epicenter-btn, .area-btn, .restart-btn{
+	margin-top: 10px;
+}
+
+body .container .first-container .right-container .row h4{
+	padding-left: 15px;
+	width: 75%;
+}
+
+body .container .first-container .right-container .row .col .wave-height, .range{
+	display: none;
+}
+
+body .container .first-container .right-container .row .col .wave-height-p{
+	font-size: 28px;
+	font-weight: bolder;
+	padding-left: 15px;
+}
+
+body .container .second-container{
+	background-color: #b6b6b6;
+}
+
+body .container .second-container .col .row .col .area, .longitud{
+	font-size: 28px;
+	font-weight: bolder;
+}
+
+body .container .second-container div .row div table tr:nth-child(even){
+	background-color: #fff9;
+}
+
+body footer{
+	text-align: center;
+  	height: 70px;
+  	line-height: 70px;
+	background-color: #000;
+}
+
+body footer p{
+	float: left;
+  	width: 50%;
+  	color: white;
+  	font-family: Arial;
+  	font-weight: lighter;
+  	margin-bottom: 0;
+}
+
+@media (min-width: 665px) {
+	body header .header-container{
+		height: 90px;
+	}
+	body .main-container{
+		padding-top: 90px;
+	}
+}
+
+@media (max-width: 768px) {
+	body .container .first-container .right-container{
+		float: none;
+	}
+}
